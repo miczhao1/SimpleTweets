@@ -15,6 +15,7 @@ class Tweet { // display what the tweet actually says (tweet body)
             val tweet = Tweet() // lets create a new tweet!
             tweet.body = jsonObject.getString("text") // key for body
             tweet.createdAt = jsonObject.getString("created_at")
+                tweet.createdAt = TimeFormatter.getTimeDifference(tweet.createdAt)
             tweet.user = User.fromJson(jsonObject.getJSONObject("user")) // use fromJson method
             return tweet
         }
