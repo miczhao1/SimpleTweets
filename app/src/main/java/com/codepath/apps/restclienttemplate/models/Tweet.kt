@@ -1,13 +1,16 @@
 package com.codepath.apps.restclienttemplate.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import org.json.JSONArray
 import org.json.JSONObject
 
-class Tweet { // display what the tweet actually says (tweet body)
-
-    var body: String = ""
-    var createdAt: String = ""
-    var user: User? = null
+@Parcelize
+class Tweet(var body: String = "", var createdAt: String = "", var user: User? = null): // display what the tweet actually says (tweet body)
+    Parcelable {
+//    var body: String = ""
+//    var createdAt: String = ""
+//    var user: User? = null
 
     companion object { // turns one specific JSON object into a tweet
         // one json object turns into tweet object
